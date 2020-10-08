@@ -5,6 +5,9 @@
  */
 package com.javaBeans;
 
+import java.sql.Connection;
+import java.sql.*;
+
 /**
  *
  * @author doug
@@ -41,7 +44,20 @@ public class Course {
         } catch (ClassNotFoundException ex) {
             
         }
+        System.out.println("...Driver loaded");
+        System.out.println(code);
+        Connection connection;
         
+        try {
+            connection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\griff\\Google Drive\\College\\IST412\\JSPBeans\\Course.accdb");
+            Statement s = connection.createStatement();
+            String sql = "INSERT INTO Course (Title,Code,NumberOfStudents) Values('" + title + "','" + code + "','" +numberOfStudents + "')";
+            
+            s.executeUpdate(sql);
+        }
+        catch (SQLException e ) {
+            
+        }
     }
     
 }
