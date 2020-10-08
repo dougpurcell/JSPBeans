@@ -23,5 +23,8 @@
             <jsp:getProperty name="course1" property="code" /><br />
             <jsp:getProperty name="course1" property="numberOfStudents" /><br />
         </div>
+        
+        <% course1.riteCourse();
+        %>
     </body>
 </html>

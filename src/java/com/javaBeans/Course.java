@@ -35,4 +35,13 @@ public class Course {
         this.numberOfStudents = numberOfStudents;
     }
     
+    public void riteCourse() {
+        try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+        } catch (ClassNotFoundException ex) {
+            
+        }
+        
+    }
+    
 }
